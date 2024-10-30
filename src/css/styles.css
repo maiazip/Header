@@ -1,0 +1,77 @@
+:root {
+    --color--whites: #fefefe;
+    --color--blacks: #151515;
+    --color--background: #030207b7;
+    --color--transparent: #35353533;
+    --color--transparent--light: #ffffff2d;
+  }
+
+body {
+    min-height: 100vh;
+    background: url(/src/assets/diagmonds.png);
+    background-position: center;
+    font-family: 'Oxygen', Roboto, sans-serif;
+}
+
+nav {
+    background-color: wheat;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    height: 3rem;
+    
+}
+
+nav a{
+    height: 100%;
+    padding: 0 1.875rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: lime;
+}
+
+nav ul li:first-child{
+margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 15.625rem;
+    z-index: 999;
+    background-color: rgba(245, 222, 179, 0.384);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.sideBarButton {
+    display: none;
+}
