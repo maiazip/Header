@@ -1,16 +1,16 @@
 * {
-    color: var(--color--whites);
-    font-family: "Oxygen", "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 1rem;
-    text-decoration: none;
-    list-style: none;
-    font-family: "Oxygen", "Roboto", sans-serif;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 300;
+  color: var(--color-white);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-lime) var(--color-gray);
+  text-decoration: none;
+}

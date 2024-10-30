@@ -1,21 +1,26 @@
 :root {
     --color--whites: #fefefe;
     --color--blacks: #151515;
+    --color--yellows: #ffd689;
+    --color--yellowsHighlight: #ffd034;
     --color--background: #030207b7;
     --color--transparent: #35353533;
     --color--transparent--light: #ffffff2d;
   }
 
 body {
+    width: auto;
     min-height: 100vh;
     background: url(/src/assets/diagmonds.png);
     background-position: center;
     font-family: 'Oxygen', Roboto, sans-serif;
+    font-weight: 300;
 }
 
 nav {
-    background-color: wheat;
+    background-color: #202020;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 nav ul {
@@ -28,7 +33,7 @@ nav ul {
 
 nav li {
     height: 3rem;
-    
+    margin-right: 1rem;
 }
 
 nav a{
@@ -37,11 +42,26 @@ nav a{
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: black;
+    color: var(--color--yellows);
 }
 
+
+
 nav a:hover {
-    background-color: lime;
+        transform: scale(1.1);
+        cursor: pointer;
+        color: var(--color--yellowsHighlight);
+        transition: 0.3s;
+        opacity: 100%;
+        text-shadow: 0 0 0.3rem var(--color--yellowsHighlight);
+        background-color: #252525;
+}
+
+#logo {
+    color: var(--color--yellowsHighlight);
+    font-size: 1.5rem;
+    text-shadow: 0 0 0.3rem var(--color--yellowsHighlight);
+    transition: transform 1s ease-in-out;
 }
 
 nav ul li:first-child{
@@ -55,7 +75,7 @@ margin-right: auto;
     height: 100vh;
     width: 15.625rem;
     z-index: 999;
-    background-color: rgba(245, 222, 179, 0.384);
+    background-color: rgba(20, 20, 20, 0.384);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
