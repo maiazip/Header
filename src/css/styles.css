@@ -1,64 +1,21 @@
 :root {
     --color--whites: #fefefe;
-    --color--blacks: #202020;
-    --color--yellows: #ffd689;
-    --color--yellowsHighlight: #ffd034;
+    --color--blacks: #151515;
     --color--background: #030207b7;
     --color--transparent: #35353533;
     --color--transparent--light: #ffffff2d;
 }
 
 body {
-    min-width: 100vw;
     min-height: 100vh;
     background: url(/src/assets/diagmonds.png);
     background-position: center;
     font-family: 'Oxygen', Roboto, sans-serif;
-    font-weight: 300;
-    color: var(--color--whites);
-    display: flex;
-    flex-direction: column;
 }
 
-#bgAnimated {
-    position: fixed;
-    z-index: 0;
-    /* Basic dimensions and centering */
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* Dark mode colors and gradient */
-    background: #171717;
-    /* Fallback for browsers that don't support gradients */
-    background: linear-gradient(135deg,
-            #121212 25%,
-            #171717 25%,
-            #1a1a1a 50%,
-            #121212 50%,
-            #171717 75%,
-            #1a1a1a 75%,
-            #171717);
-    background-size: 40px 40px;
-    /* display: none; */
-}
-
-header {
-    background-color: var(--color--blacks);
-    width: 100vw;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
-header nav {
-    width: 100%;
-    overflow: hidden;
-    z-index: 999;
+nav {
+    background-color: wheat;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
@@ -70,9 +27,9 @@ header nav ul {
     list-style: none;
 }
 
-header nav ul li {
-    height: 5vh;
-    margin-right: 1rem;
+nav li {
+    height: 3rem;
+    
 }
 
 header nav ul li a {
@@ -84,23 +41,10 @@ header nav ul li a {
     color: var(--color--yellows);
 }
 
-header nav li a:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    color: var(--color--yellowsHighlight);
-    transition: 0.3s;
-    opacity: 100%;
-    text-shadow: 0 0 .3rem var(--color--yellowsHighlight);
-    background-color: #252525;
-}
 
-header #logo {
-    color: var(--color--yellows);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 0 0 .3rem var(--color--yellowsHighlight);
-    transition: transform 1s ease-in-out;
-    font-family: serif;
+
+nav a:hover {
+    background-color: lime;
 }
 
 header nav ul li:first-child {
