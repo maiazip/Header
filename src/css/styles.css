@@ -1,21 +1,77 @@
 :root {
-    --color--whites: #fefefe;
-    --color--blacks: #151515;
-    --color--background: #030207b7;
-    --color--transparent: #35353533;
-    --color--transparent--light: #ffffff2d;
+    --primary--dark: #FFD689;
+    --primary--light: #BF8BE2;
+    --highlight--dark: #FFD034;
+    --highlight--light: #9540ce;
+    --secondary--dark: greenyellow;
+    --secondary--light: orange;
+    --text--dark: #DADADA;
+    --text--light: #202020;
+    --bg--dark: #151515;
+    --bg--light: #FDFDFD;
+    --transparent--dark: #35353533;
+    --transparent--light: #ffffff2d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--text--dark);
+    font-weight: 300;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color--yellowsHighlight) var(--text--dark);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
 }
 
 body {
-    min-height: 100vh;
-    background: url(/src/assets/diagmonds.png);
-    background-position: center;
-    font-family: 'Oxygen', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg--dark);
+    background-color: #0f0f0f;
+    color: var(--text--dark);
 }
 
-nav {
-    background-color: wheat;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+main {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+section {
+    font-size: 2rem;
+}
+
+header {
+    background-color: var(--text--light);
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+nav li {
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+header nav {
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
 }
 
 header nav ul {
@@ -27,9 +83,9 @@ header nav ul {
     list-style: none;
 }
 
-nav li {
-    height: 3rem;
-    
+header nav ul li {
+    height: 5vh;
+    margin-right: 1rem;
 }
 
 header nav ul li a {
@@ -38,13 +94,44 @@ header nav ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: var(--color--yellows);
+    color: var(--primary--dark);
 }
 
+header nav li a:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: var(--primary--light);
+    transition: 0.3s;
+    opacity: 100%;
+    text-shadow: 0 0 .3rem var(--color--yellowsHighlight);
+    background-color: #252525;
 
+}
 
 nav a:hover {
-    background-color: lime;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: var(--highlight--dark);
+    transition: 0.3s;
+    opacity: 100%;
+    text-shadow: 0 0 0.3rem var(--highlight--dark);
+    background-color: #252525;
+}
+
+#logo {
+    color: var(--highlight--dark);
+    font-size: 1.5rem;
+    text-shadow: 0 0 0.3rem var(--highlight--dark);
+    transition: transform 1s ease-in-out;
+}
+
+header #logo {
+    color: var(--primary--dark);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 .3rem var(--highlight--dark);
+    transition: transform 1s ease-in-out;
+    font-family: serif;
 }
 
 header nav ul li:first-child {
@@ -57,14 +144,14 @@ header nav ul li:first-child {
     right: 0;
     height: 100vh;
     width: 15.625rem;
-    z-index: 999;
-    background-color: rgba(20, 20, 20, 0.384);
+    background-color: var(--transparent--dark);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    z-index: 2;
 }
 
 .sidebar li {
@@ -79,304 +166,262 @@ header nav ul li:first-child {
     display: none;
 }
 
-main {
-    background-color: #151515;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 998;
-}
-
 .about {
+    width: 100%;
+    min-height: 90vh;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
-    height: 95vh;
     gap: 2rem;
-    z-index: 997;
+    font-size: 2rem;
 }
 
-.about h1 {
-    color: var(--color--yellows);
-    text-shadow: 0 0 0.3rem var(--color--yellows);
-}
-
-.about hr {
-    width: 100%;
-    border-color: var(--color--yellows);
-    box-shadow: 0 0 0.3rem var(--color--yellows);
-}
-
-.about div {
+.about article {
     background-image: url(/src/assets/diagmonds.png);
     width: 80%;
-    height: 100%;
-    padding: 2rem;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 2rem;
     gap: 2rem;
-    border-radius: rem;
-    border: 1px solid var(--color--transparent--light);
-    box-shadow: 0 0 0.3rem var(--color--transparent--light);
-    overflow: auto;
-    border-radius: 10rem 0rem  5rem 0rem;
+    border: 1px solid var(--primary--light);
+    box-shadow: 0 0 0.3rem var(--highlight--light);
+    border-radius: 20% 0% 10% 0%;
+
 }
 
-.about div h1 {
-    text-align: center;
-    font-size: 3rem;
+.about article h1,
+.about article a {
+    color: var(--primary--dark);
+    text-shadow: 0 0 0.3rem var(--highlight--dark);
+    transition: transform 0.5s ease-in-out;
 }
 
-.about div p {
-    text-align: left;
-    font-size: 2rem;
+.about article h1:hover {
+    cursor: grab;
+    text-shadow: 0 0 0.5rem var(--highlight--dark);
+    transform: skew(5deg) scale(1.1);
+}
+
+
+.about article a:hover {
+    cursor: pointer;
+    text-shadow: 0 0 0.6rem var(--highlight--dark);
+    transform: skew(5deg) scale(1.2);
+}
+
+
+.about article hr {
+    width: 100%;
+    border-color: var(--primary--light);
+    box-shadow: 0 0 0.3rem var(--highlight--light);
 }
 
 .about aside {
     background-image: url(/src/assets/diagmonds.png);
     width: 20%;
-    height: 100%;
-    padding: 2rem;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 2rem;
     gap: 2rem;
-    border-radius: rem;
-    border: 1px solid var(--color--transparent--light);
-    box-shadow: 0 0 0.3rem var(--color--transparent--light);
     overflow: hidden;
-    border-radius: 30rem 0rem 50rem 0rem;
+    border: 1px solid var(--primary--light);
+    border-radius: 50% 0% 50% 0%;
+    box-shadow: 0 0 0.3rem var(--highlight--light);
 }
 
 .about aside span {
-    font-size: 1.9rem;
-    width: 100%;
-    height: 10%;
-    color: var(--color--yellows);
-    text-shadow: 0 0 0.3rem var(--color--yellows);
+    color: var(--primary--dark);
+    text-shadow: 0 0 0.3rem var(--highlight--dark);
 }
 
 .about aside img {
-    outline: 2px solid var(--color--yellows);
-    border-radius: 50% 0% 60% 00%;
     width: 100%;
-    box-shadow: 0 0 0.3rem var(--color--yellows);
-    transition: 2s ease-in-out;
+    outline: 2px solid var(--primary--light);
+    border-radius: 50% 0% 60% 00%;
+    box-shadow: 0 0 0.3rem var(--highlight--light);
+    transition: 1s ease-in-out;
+}
+
+.about aside img:hover {
+    cursor: pointer;
+    scale: 0.98;
+    transform: skew(1deg);
 }
 
 .projects {
-     width: 100vw;
-     height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.projects article {
+    background-image: url(/src/assets/diagmonds.png);
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
+    border: 1px solid var(--primary--light);
+    border-radius: 1rem 1rem 15% 15%;
+    box-shadow: 0 0 0.3rem var(--highlight--light);
     padding: 2rem;
-    font-size: 2rem;
-    color: var(--color--yellows);
-    text-shadow: 0 0 0.3rem var(--color--yellows);
-    z-index: 996;
+}
+
+.gridProjects {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+
+.gridProjects img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--primary--light);
+    border-radius: 0% 0% 0% 0%;
+    border-radius: 0.5rem;
+    transition: 1.1s ease-in-out;
+}
+
+.gridProjects img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 0.3rem var(--highlight--light);
 }
 
 .projects button {
-    background-color: var(--color--transparent);
-    border-color: var(--color--yellows);
-    width: 33%;
-    height: 3rem;
-    grid-column: 2;
-    font-weight: bold;
-    text-shadow: 0 0 0.3rem var(--color--yellows);
-    border-radius: 1rem 1rem 8rem 8rem;
-}
-.projects .container {
-    background-image: url(/src/assets/diagmonds.png);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: baseline;
-    padding: 2rem;
-    gap: 2rem;
-    border: 1px solid var(--color--transparent--light);
-    box-shadow: 0 0 0.3rem var(--color--transparent--light);
-    border-radius: 6rem;
-}
-
-.projects .grid {
-    display: grid;
-    grid: repeat (3, 60px);
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-}
-
-.projects .grid img {
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--color--yellows);
-    box-shadow: 0 0 0.3rem var(--color--yellows);
-}
-
-.certifications {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    z-index: 3;
-    padding: 2rem;
-    gap: 2rem;
-}
-
-.certifications aside {
-    background-image: url(/src/assets/diagmonds.png);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 20%;
-    height: 100%;
-    padding: 2rem;
+    height: auto;
+    background-color: var(--transparent--dark);
+    padding: 1rem;
+    border: 1px solid var(--primary--light);
+    color: var(--primary--dark);
+    border-radius: 0.5rem 0;
+    transition: 0.5s ease-in-out;
+}
+
+.projects button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 0.3rem var(--highlight--light);
+    text-shadow: 0 0 0.3rem var(--highlight--dark);
+}
+
+.certificates {
+    width: 100%;
     overflow: hidden;
 }
 
-.certificationsContainer {
+.certificates article {
     background-image: url(/src/assets/diagmonds.png);
-    width: 80%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 1px solid var(--color--yellows);
 }
-
-.gridCertifications {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid: repeat (3, 60px);
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-}
-
-.gridCertifications img {
-    width: 100%;
-    height: 100%;
-}
-/* .certifications {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding: 2rem;
-    color: var(--color--yellows);
-    text-shadow: 0 0 0.3rem var(--color--yellows);
-    gap: 2rem;
-    z-index: 995;
-    font-size: 2rem;
-    text-align: center;
-}
-
-
-.certifications div {
-    background-image: url(/src/assets/diagmonds.png);
-    width: 80%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    overflow: hidden;
-    border: 1px solid var(--color--transparent--light);
-    box-shadow: 0 0 0.3rem var(--color--transparent--light);
-    border-radius: 2rem;
-}
-
-.certifications .gridCertifications {
-    display: grid;
-    grid: repeat (3, 60px);
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-}
-
-.certifications .gridCertifications img {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    border: 1px solid var(--color--yellows);
-    box-shadow: 0 0 0.3rem var(--color--yellows);
-}
-
-.certifications .gridCertifications button {
-    background-color: var(--color--blacks);
-    border-color: var(--color--yellows);
-    height: 3rem;
-    grid-column: 2;
-    font-weight: bold;
-    text-shadow: 0 0 0.3rem var(--color--yellows);
-      border-radius: 1rem 1rem 8rem 8rem;
-}
-
-.certifications aside {
-    background-image: url(/src/assets/diagmonds.png);
-    width: 20%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    font-size: 3rem;
-    overflow: hidden;
-    border: 1px solid var(--color--transparent--light);
-    box-shadow: 0 0 0.3rem var(--color--transparent--light);
-    border-radius: 3rem 20rem 3rem 20rem;
-}
-
-.certifications aside img {
-    width: 100%;
-    height: 50%;
-}
-.certifications aside div {}
-
-.certificate img {}
 
 .resume {
-    padding: 2rem;
+    background-image: url(/src/assets/diagmonds.png);
     width: 100%;
-    height: 100%;
-    z-index: 994;
+    overflow: hidden;
 }
 
-.resume div {
+footer {
+    width: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+
+.overlayText {
+    align-self: center;
+    justify-self: center;
+    width: 10rem;
+    height: 3rem;
+    color: var(--primary--dark);
+    border: 1px solid var(--primary--light);
+    background-color: #bf8be22a;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+.overlayBackground {
+    width: 100%;
+    height: 100%;
+    background-color: #bf8be225;
+    position:  absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.overlayBackground:hover{
+    opacity: 1;
+}
+
+.overlayText:hover {
+    opacity: 1;
+}
+
+
+
+.certificates {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.certificates article {
+    width: 80%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;;
-    padding: 2rem;
-    background-color: var(--color--transparent);
     gap: 2rem;
-    font-size: 2rem;
-    color: var(--color--yellows);
-    text-shadow: 0 0 0.3rem var(--color--yellows);
+    padding: 2rem;
+    background-image: url(/src/assets/diagmonds.png);
+    overflow: hidden;
 }
 
-.resume img {
-    width: 40rem;
-    height: 50rem;
-    border: 1px solid var(--color--yellows);
-    box-shadow: 0 0 0.3rem var(--color--yellows);
-} */
+.certificates aside {
+    background-image: url(/src/assets/diagmonds.png);
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificates img {
+
+    width: 400px;
+}
